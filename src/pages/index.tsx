@@ -1,4 +1,3 @@
-// index.tsx
 import Assistant from "./assistant";
 
 export default function Home() {
@@ -13,8 +12,8 @@ export default function Home() {
         </div>
         <div className="flex justify-center items-center bg-white shadow-lg p-6 rounded-lg">
           <Assistant
-            assistantId={''}
-            apiKey={''}
+            assistantId={''} //Enter your assistant ID
+            apiKey={''} //Enter your assistant API ID
           />
         </div>
       </div>
