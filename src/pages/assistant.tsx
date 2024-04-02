@@ -72,15 +72,17 @@ const Assistant: FC<Props> = ({ assistantId, apiKey }) => {
     <div className="container mx-auto p-4">
       <div className="flex flex-col h-80 overflow-y-auto">
         {messageList.map((message, index) => (
-          <div key={index} className={`ml-3 my-2 ${index === messageList.length - 1 ? 'font-semibold' : ''}`}>
-            {message.content.length === 0 ? "No Content" : (
-              <p className="text-left">{message.content[0].type === "text" && message.content[0].text.value}</p>
-            )}
+          <div key={index} className={`flex ${message.role === "user" ? "justify-start" : "justify-end"} mb-4`}>
+            <div className={`rounded-lg p-3 max-w-xs ${message.role === "user" ? "bg-gray-200" : "bg-slate-800"}`}>
+              <p className={`text-sm ${message.role === "user" ? "text-black" : "text-white"}`}>
+                {message.content[0].type === "text" && message.content[0].text.value}
+              </p>
+            </div>
           </div>
         ))}
         {waiting && (
           <div className="flex justify-center items-center mt-2">
-            <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded-md flex items-center" disabled>
+            <button type="button" className="bg-cyan-600 text-white px-4 py-2 rounded-md flex items-center" disabled>
               <svg className="animate-spin h-5 w-5 mr-2 text-white" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.418 3.582 8 8 8v-4c-1.88 0-3.617-.646-5-1.709l1.416-1.416zM20 12a8 8 0 01-8 8v4c4.418 0 8-3.582 8-8h-4zm-2-5.291A7.962 7.962 0 0120 12h4c0-4.418-3.582-8-8-8v4c1.88 0 3.617.646 5 1.709l-1.416 1.416z"></path>
@@ -99,9 +101,9 @@ const Assistant: FC<Props> = ({ assistantId, apiKey }) => {
             value={query}
             id="query"
             placeholder="Enter Question here"
-            className="p-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="p-2 border rounded-md focus:outline-none focus:border-gray-400"
           />
-          <button type="submit" className="px-4 py-2 ml-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600">Search</button>
+          <button type="submit" className="px-4 py-2 ml-2 bg-green-700 text-white rounded-md focus:outline-none hover:bg-green-600">Send</button>
         </div>
       </form>
     </div>
@@ -109,3 +111,5 @@ const Assistant: FC<Props> = ({ assistantId, apiKey }) => {
 };
 
 export default Assistant;
+
+// My name is Nubie, the artificial turf Intelligence, your go-to fantasy football expert! How can I assist you in the fantasy football field today?
