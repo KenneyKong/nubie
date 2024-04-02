@@ -9,7 +9,7 @@ export default function Home() {
             <img src="\images\Nubie-removebg-text.png" alt="Nubie" className="h-48 md:h-auto"  />
           </div>
           <div className="col-span-1 flex justify-center items-center">
-            <div className="bg-white shadow-lg p-6 rounded-lg w-full xl:w-240 min-w-[340px]">
+            <div className="bg-slate-700 shadow-lg p-6 rounded-lg w-full xl:w-240 min-w-[340px]">
               <Assistant
                 assistantId={''} //Enter your assistant ID
                 apiKey={''} //Enter your assistant API ID

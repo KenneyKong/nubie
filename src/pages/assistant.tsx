@@ -73,8 +73,8 @@ const Assistant: FC<Props> = ({ assistantId, apiKey }) => {
       <div className="flex flex-col h-80 overflow-y-auto">
         {messageList.map((message, index) => (
           <div key={index} className={`flex ${message.role === "user" ? "justify-start" : "justify-end"} mb-4`}>
-            <div className={`rounded-lg p-3 max-w-xs ${message.role === "user" ? "bg-gray-200" : "bg-slate-800"}`}>
-              <p className={`text-sm ${message.role === "user" ? "text-black" : "text-white"}`}>
+            <div className={`rounded-lg p-3 max-w-xs ${message.role === "user" ? "bg-cyan-600" : "bg-slate-800"}`}>
+              <p className={`text-sm ${message.role === "user" ? "text-white" : "text-white"}`}>
                 {message.content[0].type === "text" && message.content[0].text.value}
               </p>
             </div>
@@ -101,7 +101,7 @@ const Assistant: FC<Props> = ({ assistantId, apiKey }) => {
             value={query}
             id="query"
             placeholder="Enter Question here"
-            className="p-2 border rounded-md focus:outline-none focus:border-gray-400"
+            className="p-2 border rounded-md focus:outline-none focus:border-gray-400 bg-slate-600 text-white"
           />
           <button type="submit" className="px-4 py-2 ml-2 bg-green-700 text-white rounded-md focus:outline-none hover:bg-green-600">Send</button>
         </div>
